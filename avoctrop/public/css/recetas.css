@@ -1,0 +1,39 @@
+.receta{
+    border: 2px rgba(0, 0, 0, 0.119) solid;
+    border-radius: 5px;
+}
+
+.receta img{
+    border-radius: 5px;
+}
+
+.receta:hover{
+    border: 3px #000000 solid;
+}
+
+.receta:hover h3{
+    font-weight: bold;
+}
+
+.receta-top{
+    border: 3px #DDB92F solid;
+    border-radius: 5px;
+}
+
+.receta-top:hover{
+    border: 3px black solid;
+}
+
+.receta-top img{
+    border-radius: 2px;
+    width: 30%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.buscador{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1.5px black solid;
+    border-radius: 5px;
+}

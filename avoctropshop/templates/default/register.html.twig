@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}- Registro{% endblock %}
+
+{% block main %}
+<main>
+        <div class="container">
+            <div class="row vh-80">
+                <div class="col-1"></div>
+                <div class="col-10 align-self-center ps-5 pe-5">
+                    <div class="bg-white rounded border shadow-lg">
+                        <div class="row">
+                            <div class="col-5"><img class="w-100 h-100 rounded" src="/img/aguacate.jpg" alt=""></div>
+                            <div class="col-7 ps-5 pe-5 pt-5 pb-5">
+                                <h3 class="text-center text-verde fw-bold pb-4">REGISTRO</h3>
+                                <form action="">
+                                    <label for="name">Nombre :</label>
+                                    <input class="form-control mb-4" type="text" name="name" id="name">
+                                    <label for="surname">Apellidos :</label>
+                                    <input class="form-control mb-4" type="surname" name="surname" id="surname">
+                                    <label for="mail">Correo Electronico :</label>
+                                    <input class="form-control mb-4" type="email" name="mail" id="mail">
+                                    <label for="pass">Contraseña :</label>
+                                    <input class="form-control mb-4" type="password" name="pass" id="pass">
+                                    <label for="pass">Repetir Contraseña :</label>
+                                    <input class="form-control" type="password" name="pass" id="pass">
+                                    <div class="row pt-4">
+                                        <div class="col-6 text-center">
+                                            <p>¿Ya tienes cuenta?</p>
+                                            <button type="submit" class="btn btn-verde">INICIA SESIÓN</button>
+                                        </div>
+                                        <div class="col-6 pt-4 text-end">
+                                            <p></p>
+                                            <button type="submit" class="btn btn-verde">CREAR</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'sideandtopbar.html.twig' %}
+
+{% block title %}Editar Noticias{% endblock %}
+
+{% block gestion %}NOTICIAS (EDITAR){% endblock %}
+
+{% block row %}
+    <div class="row pt-3">
+        <div class="col-1"></div>
+        <div class="col-10 bg-white shadow p-5">
+        {{ include('noticias/_form.html.twig', {'button_label': 'Actualizar'}) }}
+        </div>
+        <div class="col-1"></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'bobase.html.twig' %}
+
+{% block title %} Inicio{% endblock %}
+
+{% block main %}
+<main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center align-self-center">
+                    <h3 class="fw-bold pt-3">Hola, <span class="text-verde">admin</span> escoge que quieres modificar</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 p-4 pt-5">
+                    <a href="productos" class="text-decoration-none">
+                        <div class="modificar shadow border-verde-grande p-0 text-center text-verde">
+                            <i class="bi bi-diagram-3 fs-icon"></i>
+                            <h2 class="fw-bold pb-2">PRODUCTOS</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4 p-4 pt-5">
+                    <a href="pedidos" class="text-decoration-none">
+                        <div class="modificar shadow border-verde-grande p-0 text-center text-verde">
+                            <i class="bi bi-bag-check fs-icon"></i>
+                            <h2 class="fw-bold pb-2">PEDIDOS ONLINE</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4 p-4 pt-5">
+                    <a href="usuarios" class="text-decoration-none">
+                        <div class="modificar shadow border-verde-grande p-0 text-center text-verde">
+                            <i class="bi bi-person-fill fs-icon"></i>
+                            <h2 class="fw-bold pb-2">USUARIOS</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 p-4 pt-5">
+                    <a href="recetas" class="text-decoration-none">
+                        <div class="modificar shadow border-verde-grande p-0 text-center text-verde">
+                            <i class="bi bi-journal-text fs-icon"></i>
+                            <h2 class="fw-bold pb-2">RECETAS</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4 p-4 pt-5">
+                    <a href="noticias" class="text-decoration-none">
+                        <div class="modificar shadow border-verde-grande p-0 text-center text-verde">
+                            <i class="bi bi-newspaper fs-icon"></i>
+                            <h2 class="fw-bold pb-2">NOTICIAS</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4 p-4 pt-5">
+                    <a href="galeria" class="text-decoration-none">
+                        <div class="modificar shadow border-verde-grande p-0 text-center text-verde">
+                            <i class="bi bi-images fs-icon"></i>
+                            <h2 class="fw-bold pb-2">GALERIA</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row text-center pt-4">
+                <div class="col-6">
+                    <a class="btn btn-warning rounded-1 fs-2 fw-bold text-white" href="http://avoctrop.local">AVOCTROP</a>
+                </div>
+                <div class="col-6">
+                    <a class="btn btn-warning rounded-1 fs-2 fw-bold text-white" href="/home">AVOCTROPSHOP</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

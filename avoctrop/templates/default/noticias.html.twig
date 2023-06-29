@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}- Noticias{% endblock %}
+{% block css %}<link rel="stylesheet" href="css/noticias.css">{% endblock %}
+
+{% block main %}
+    <main>
+        {% for noticia in noticias %}
+            <div class="modal fade" id="not{{loop.index}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">{{noticia.titulo}}</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img class="w-100" src="uploads/imgNoticias/{{noticia.img}}" alt="imagenNoticia">
+                    </div>
+                    <div class="modal-footer">
+                        <p class="text-secondary p-2">{{noticia.texto}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+       {% endfor %}
+        <div class="container-fluid pb-4">
+            <div class="row">
+                <div class="col-12 fondo">
+                    <h1 class="text-center text-white fw-bold pt-4 pb-3">NOTICIAS ACTUALES</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container ps-5 pe-5 bg-white shadow-lg">
+            <div class="row pt-4">
+                <div class="col-12">
+                    <form method="get" action="noticias">
+                        <div class="row">
+                            <div class="col-10">
+                                <input type="text" name="buscar" class="buscador" id="buscador" {% if txt %} value="{{txt}}"{% endif %} placeholder="Buscar por nombre de la noticia">  
+                            </div>
+                            <div class="col-2 text-center d-flex justify-content-around">
+                                <button class="btn btn-verde p-2" type="submit"><i class="bi bi-search"></i></button>
+                                <a class="btn btn-danger p-2" href="noticias"><i class="bi bi-trash"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row pt-5 pb-5">
+                <div class="col-12">
+                    <div class="row pb-5">
+                        {% for noticia in noticias %}
+                            <div class="col-12 col-md-4 pt-4">  
+                                <button type="button" class="bg-white border-0 w-100" data-bs-toggle="modal" data-bs-target="#not{{loop.index}}">
+                                    <div class="noticia position-relative">
+                                        <img class="w-100" src="uploads/imgNoticias/{{noticia.img}}" alt="imagenNoticia">
+                                        <h3 class="titulo top-negative position-absolute w-100">{{noticia.titulo}}</h3>
+                                   </div>
+                                </button>
+                            </div>
+                       {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

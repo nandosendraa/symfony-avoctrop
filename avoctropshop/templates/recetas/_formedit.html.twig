@@ -1,0 +1,6 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-verde me-2">{{ button_label|default('Guardar') }}</button>
+    <a class="btn btn-success me-2" href="{{ path('recetas') }}">Volver a la lista</a>
+    {{ include('recetas/_delete_form.html.twig') }}
+{{ form_end(form) }}

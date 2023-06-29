@@ -1,0 +1,16 @@
+{% extends 'sideandtopbar.html.twig' %}
+{# form_div_layout.html.twig #}
+
+{% block title %}Editar Recetas{% endblock %}
+
+{% block gestion %}RECETAS (EDITAR){% endblock %}
+
+{% block row %}
+    <div class="row pt-3">
+        <div class="col-1"></div>
+        <div class="col-10 bg-white shadow p-5">
+        {{ include('recetas/_formedit.html.twig', {'button_label': 'Actualizar'}) }}
+        </div>
+        <div class="col-1"></div>
+    </div>
+{% endblock %}

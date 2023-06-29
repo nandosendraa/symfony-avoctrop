@@ -1,0 +1,43 @@
+{% extends 'sideandtopbar.html.twig' %}
+
+{% block gestion %} NOTICIAS{% endblock %}
+{% block nuevo %}
+    <a href="{{ path('app_noticias_new') }}" class="btn btn-verde">NUEVA NOTICIA</a>
+{% endblock %}
+
+{% block row %}
+<div class="row pt-3">
+                        <div class="col-1"></div>
+                        <div class="col-10 bg-white shadow">
+                            <table class="table table-striped table-hover text-center">
+                                <thead>
+                                    <tr>
+                                        <th>TITULO</th>
+                                        <th>NOTICIA</th>
+                                        <th>¿RELEVANTE?</th>
+                                        <th>ACCIONES</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for noticia in noticias %}
+                                        <tr>
+                                            <td>{{noticia.titulo}}</td>
+                                            <td>{{noticia.texto}}</td>
+                                            <td>
+                                                {% if noticia.relevante %}
+                                                    SI
+                                                {% else %}
+                                                    NO
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ include('noticias/_delete_form.html.twig') }}
+                                        <a class="btn btn-warning mt-3" href="{{ path('app_noticias_edit', {'id': noticia.id}) }}"><i class="bi bi-pencil-square"></i>
+                                        </a><a class="btn btn-primary mt-3" href="{{ path('app_noticias_show', {'id': noticia.id}) }}"><i class="bi bi-eye"></i></a></td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+{% endblock %}

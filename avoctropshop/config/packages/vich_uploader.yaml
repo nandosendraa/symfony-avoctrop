@@ -1,0 +1,15 @@
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        type: attribute
+
+    mappings:
+        recetas:
+            uri_prefix: ../avoctrop/public/uploads/imgRecetas
+            upload_destination: '%kernel.project_dir%/../avoctrop/public/uploads/imgRecetas'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        noticias:
+            uri_prefix: ../avoctrop/public/uploads/imgNoticias
+            upload_destination: '%kernel.project_dir%/../avoctrop/public/uploads/imgNoticias'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

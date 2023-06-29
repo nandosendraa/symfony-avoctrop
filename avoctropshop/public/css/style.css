@@ -1,0 +1,94 @@
+.img-prod{
+    width: 100%;
+}
+
+
+body{
+    background-color: #F8F9FA;
+}
+
+.text-verde{
+    color: #5ccb5f;
+}
+
+.border-verde-grande{
+    border: #5ccb5f 4px solid !important;
+}
+
+.border-verde{
+    border: #5ccb5f 2px solid !important;
+}
+
+.border-bottom-verde{
+    border-bottom: #5ccb5f 3px solid !important;
+}
+
+.btn-verde{
+    background-color: #5ccb5f;
+}
+
+.bg-verde{
+    background-color: #5ccb5f;
+}
+
+.fs-7{
+    font-size: 0.8rem;
+}
+
+.w-10{
+    width: 4.5rem;
+}
+
+.producto{
+    padding: 1.5rem;
+    border: 2px solid #5ccb5f;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+}
+
+.btn-verde:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid #5ccb5f;
+}
+
+.producto:hover{
+    border: 2px solid #000000;
+}
+
+.fs-icon{
+    font-size: 10rem;
+}
+
+.modificar:hover i{
+    color: #000000;
+}
+
+.modificar:hover h2{
+    color: #000000;
+}
+
+.vh-70{
+    height: 70vh;
+}
+
+.vh-80{
+    height: 80vh;
+}
+
+.fondo{
+    width: 100%;
+    padding-top: 10rem !important;
+    background-image: url(../img/aguacate.jpg);
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

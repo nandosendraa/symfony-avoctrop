@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Noticias index{% endblock %}
+{% block nuevo %}
+    <a href="{{ path('app_noticias_new') }}" class="btn btn-verde"></a>
+{% endblock %}
+
+{% block body %}
+    <h1>Noticias index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Texto</th>
+                <th>Img</th>
+                <th>Relevante</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for noticia in noticias %}
+            <tr>
+                <td>{{ noticia.id }}</td>
+                <td>{{ noticia.titulo }}</td>
+                <td>{{ noticia.texto }}</td>
+                <td>{{ noticia.img }}</td>
+                <td>{{ noticia.relevante ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_noticias_show', {'id': noticia.id}) }}">show</a>
+                    <a href="{{ path('app_noticias_edit', {'id': noticia.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_noticias_new') }}">Create new</a>
+{% endblock %}

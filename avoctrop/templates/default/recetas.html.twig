@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}- Recetas{% endblock %}
+{% block css %}<link rel="stylesheet" href="css/recetas.css">{% endblock %}
+
+{% block main %}
+<main>
+        <div class="container-fluid pb-4">
+            <div class="row">
+                <div class="col-12 fondo">
+                    <h1 class="text-center text-white fw-bold pt-4 pb-3">NUESTRAS RECETAS</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container ps-5 pe-5 bg-white shadow-lg">
+            <div class="row pt-4">
+                <div class="col-12">
+                    <form method="get" action="recetas">
+                        <div class="row">
+                            <div class="col-10">
+                                <input type="text" name="buscar" class="buscador" id="buscador" {% if txt %} value="{{txt}}"{% endif %} placeholder="Buscar por nombre de la receta">  
+                            </div>
+                            <div class="col-2 text-center d-flex justify-content-around">
+                                <button class="btn btn-verde p-2" type="submit"><i class="bi bi-search"></i></button>
+                                <a class="btn btn-danger p-2" href="recetas"><i class="bi bi-trash"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 pt-5">
+                    {% for receta in recetas %}
+                    {% if (receta.top == true) %}
+                    {% set ingredientes = receta.ingredientes|split('|') %}
+                    {% set pasos = receta.pasos|split('|') %}
+                    {% set masPasos = false %}
+                    {% set masIngredientes = false %}
+                    {% if receta.masIngredientes %}
+                        {% set masIngredientes = receta.masIngredientes|split('|') %}
+                    {% endif %}
+                    {% if receta.masPasos %}
+                        {% set masPasos = receta.masPasos|split('|') %}
+                    {% endif %}
+                        <div style="background-color: {{receta.color}};"  class="receta-top position-relative mb-5">
+                            <div class="row">
+                                <div class="col-md-5 col-12 align-self-center text-center">
+                                    <img class="w-100" src="../uploads/imgRecetas/{{receta.img}}" alt="">
+                                </div>
+                                <div class="col-md-7 col-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h3 class="pt-5 text-center fw-bold">{{receta.nombre}}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4 pe-3">
+                                        <div class="col-xl-6 col-12 ps-4 ps-md-0 align-self-center">
+                                            <h5 class="pt-3 fw-bold">INGREDIENTES :</h5>
+                                            <ul class="ps-5 pt-2">
+                                                {% for ingrediente in ingredientes %}
+                                                    <li class="text-start">{{ingrediente}}</li>
+                                                {% endfor %}
+                                                {% if masIngredientes %}
+                                                    {% for masIngrediente in masIngredientes %}
+                                                        <li class="text-start">{{masIngrediente}}</li>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                        <div class="col-xl-5 col-12 ps-4 ps-md-0 align-self-center">
+                                            <h5 class="fw-bold">PASOS :</h5>
+                                            <ol class="ps-5">
+                                                {% for paso in pasos %}
+                                                    <li class="text-start">{{paso}}</li>
+                                                {% endfor %}
+                                                {% if masPasos %}
+                                                    {% for masPaso in masPasos %}
+                                                        <li class="text-start">{{masPaso}}</li>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span
+                                class="position-absolute top-0 start-50 translate-middle bg-warning border border-dark rounded-pill fw-bold p-3 border-2">
+                                RECETA TOP
+                            </span>
+                        </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% for receta in recetas %}
+            {% if (receta.top == false) %}
+                {% set ingredientes = receta.ingredientes|split('|') %}
+                {% set pasos = receta.pasos|split('|') %}
+                {% set masPasos = false %}
+                {% set masIngredientes = false %}
+                {% if receta.masIngredientes %}
+                    {% set masIngredientes = receta.masIngredientes|split('|') %}
+                {% endif %}
+                {% if receta.masPasos %}
+                    {% set masPasos = receta.masPasos|split('|') %}
+                {% endif %}
+                <div class="modal modal-xl fade" id="modal{{loop.index}}" tabindex="-1" aria-labelledby="label{{loop.index}}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div style="background-color: {{receta.color}};" class="modal-content">
+                        <div class="modal-header border-0">
+                          <h1 class="modal-title" id="label{{loop.index}}">{{receta.nombre}}</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body border-0">
+                            <div class="row">
+                                <div class="col-xl-6 col-12 text-center align-self-center">
+                                    <img class="w-100" src="../uploads/imgRecetas/{{receta.img}}" alt="">
+                                </div>
+                                <div class="col-xl-6 col-12">
+                                    <h5 class="pt-3 fw-bold">INGREDIENTES :</h5>
+                                    <ul class="ps-5 pt-2">
+                                        {% for ingrediente in ingredientes %}
+                                            <li class="text-start">{{ingrediente}}</li>
+                                        {% endfor %}
+                                        {% if masIngredientes %}
+                                            {% for masIngrediente in masIngredientes %}
+                                                <li class="text-start">{{masIngrediente}}</li>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="pt-3 fw-bold">PASOS :</h5>
+                                    <ol class="ps-5 pt-2">
+                                        {% for paso in pasos %}
+                                            <li class="text-start">{{paso}}</li>
+                                        {% endfor %}
+                                        {% if masPasos %}
+                                            {% for masPaso in masPasos %}
+                                                <li class="text-start">{{masPaso}}</li>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </ol>
+                                </div>  
+                            </div>    
+                        </div>
+                        <div class="modal-footer border-0">
+                            <a class="btn btn-dark" href="">IMPRIMIR RECETA</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+            {% endfor %}
+            <div class="row pt-5">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="row">
+                    {% for receta in recetas %}
+                        {% if (receta.top == false) %}
+                        {% set ingredientes = receta.ingredientes|split('|') %}
+                        {% set masIngredientes = false %}
+                        {% if receta.masIngredientes %}
+                            {% set masIngredientes = receta.masIngredientes|split('|') %}
+                        {% endif %}
+                            <div class="col-12 col-md-6 pb-3">
+                                <button type="button" class="border-0 bg-white" data-bs-toggle="modal" data-bs-target="#modal{{loop.index}}">
+                                    <div class="receta" style="background-color: {{receta.color}};">
+                                        <img class="w-100" src="../uploads/imgRecetas/{{receta.img}}" alt={{receta.nombre}}>
+                                        <div class="p-3 border-top border-5 border-dark rounded-2">
+                                            <h3 class="pt-3 text-center fw-bold">{{receta.nombre}}</h3>
+                                            <h5 class="pt-3 text-start pb-1">INGREDIENTES :</h5>
+                                            <ul>
+                                                {% for ingrediente in ingredientes %}
+                                                    <li class="text-start">{{ingrediente}}</li>
+                                                {% endfor %}
+                                                {% if masIngredientes %}
+                                                    {% for masIngrediente in masIngredientes %}
+                                                        <li class="text-start">{{masIngrediente}}</li>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                            {% endif %}
+                       {% endfor %}
+                       </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+    </main>
+{% endblock %}

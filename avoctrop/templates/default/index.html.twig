@@ -1,0 +1,198 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}- Inicio{% endblock %}
+{% block css %}
+    
+{% endblock %}
+{% block main %}
+    <main>
+    <div id="div-cookies" style="display: none;">
+        Necesitamos usar cookies para que funcione todo, si permanece aquí acepta su uso, más información en
+        <a hreflang="es" href="legal">Aviso Legal</a>
+        y la
+        <a hreflang="es" href="/info/politica-de-privacidad">Política de Privacidad</a>.
+        <button type="button" class="btn btn-sm btn-primary" onclick="acceptCookies()">
+            Acepto el uso de cookies
+        </button>
+    </div>
+        <div class="container-fluid">
+            <div class="row d-none d-md-flex">
+                <div class="col-5 g-0">
+                    <img class="w-100" src="img/AVOCTROP (Logo) Verde.jpg" alt="">
+                </div>
+                <div class="col-7 align-self-center">
+                    <div class="row">
+                        <div class="col-2 col-xl-1 align-self-center"><button class="bg-white border-0" id="iz"><i
+                                    class="bi bi-arrow-left-circle fs-1 flecha-carta"></i></button></div>
+                        <div class="col-3 align-self-center d-none d-xl-block">
+                            <div class="shadow-lg card border-verde border-2 rounded-0">
+                                <div class="card-header bg-verde rounded-0">
+                                    <h5 id="titI" class="card-title pt-2 fw-bold text-center text-white"></h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img id="imgI" class="carta rounded-5" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 pt-2 col-8">
+                            <div class="shadow-lg fadein card border-verde border-2 rounded-0">
+                                <div class="card-header bg-verde rounded-0">
+                                    <h5 id="titC" class="card-title fs-2 pt-2 fw-bold text-center text-white"></h5>
+                                </div>
+                                <div class="card-body">
+                                    <p id="descC" class="card-text text-center fs-5 pt-2 pb-0 pb-xl-5"></p>
+                                    <div class="text-end"><a id="destC"
+                                            class="btn bg-verde boton-tarjeta rounded-0">VISITAR</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 align-self-center d-none d-xl-block">
+                            <div class="shadow-lg card border-verde border-2 rounded-0">
+                                <div class="card-header bg-verde rounded-0">
+                                    <h5 id="titD" class="card-title pt-2 fw-bold text-center text-white"></h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img id="imgD" class="carta rounded-5" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 col-xl-1 align-self-center"><button class="bg-white border-0" id="de"><i
+                                    class="bi bi-arrow-right-circle fs-1 flecha-carta"></i></button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8 d-flex justify-content-between align-items-end pt-5">
+                            <i id="b0" class="bi bi-circle"></i>
+                            <i id="b1" class="bi bi-circle"></i>
+                            <i id="b2" class="bi bi-circle"></i>
+                            <i id="b3" class="bi bi-circle"></i>
+                            <i id="b4" class="bi bi-circle"></i>
+                            <i id="b5" class="bi bi-circle"></i>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 video text-center">
+                    <h1 class="pb-5 fs-2">¿QUIERES SABER MAS SOBRE NOSOTROS?</h1>
+                    <a class="btn bg-verde btn-verde mt-4 fs-4" href="#descubrir">DESCÚBRENOS</a>
+                </div>
+            </div>
+            <div id="aguacates" class="row">
+                <div class="col-12 fondo">
+                    <h1 class="text-center text-white fw-bold pt-4 pb-3">TENEMOS AGUACATES PARA TODO EL AÑO</h1>
+                </div>
+            </div>
+            <div class="container-fluid position-relative">
+                <div id="ventana" class="position-absolute bg-verde rounded mb-5 txtaguacate d-none">
+                    <div class="row">
+                        <div class="col-10"><h5 id="titA" class="pt-4 text-center fs-2 t-aguacate">AGUACATE HASS</h5></div>
+                        <div id="cruz" class="pt-3 ps-4 col-2 cruz text-center"><i class="bi bi-x fs-1 pe-5"></i></div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-md-5 col-12 align-self-center">
+                            <img id="imgA" class="w-100" src="img/aguacate/Hass.png" alt="">
+                        </div>
+                        <div class="col-md-7 col-12 align-self-center fs-4">
+                            <p id="txtA">Aqui ira un texto explicativo sobre este tipo de aguacate, generado con js para tener un contenido mas dinamico</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col-1 d-none d-md-flex"></div>
+                    <div id="hass" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Hass.png" alt="">
+                        <h5 class="pt-4 t-aguacate text-center">AGUACATE HASS</h5>
+                    </div>
+                    <div id="lhass" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Lamb Hass.png" alt="">
+                        <h5 class="pt-4 t-aguacate text-center">AGUACATE LAMB HASS</h5>
+                    </div>
+                    <div id="carmen" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Carmen Hass.png" alt="">
+                        <h5 class="pt-4 t-aguacate text-center">AGUACATE CARMEN HASS</h5>
+                    </div>
+                    <div id="pinkerton" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Pinkerton.png" alt="">
+                        <h5 class="pt-4 t-aguacate">AGUACATE PINKERTON</h5>
+                    </div>
+                    <div id="boyce" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Jan Boyce.png" alt="">
+                        <h5 class="pt-4 t-aguacate">JAN BOYCE</h5>
+                    </div>
+                    <div class="col-1 d-none d-md-flex"></div>
+                    <div class="col-1 d-none d-md-flex"></div>
+                    <div id="carla" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Carla.png" alt="">
+                        <h5 class="pt-4 t-aguacate">AGUACATE CARLA</h5>
+                    </div>
+                    <div id="reed" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Reed.png" alt="">
+                        <h5 class="pt-4 t-aguacate">AGUACATE REED</h5>
+                    </div>
+                    <div id="pollock" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Pollock.png" alt="">
+                        <h5 class="pt-4 t-aguacate">AGUACATE POLLOCK</h5>
+                    </div>
+                    <div id="gwen" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/Gwen.png" alt="">
+                        <h5 class="pt-4 t-aguacate">AGUACATE GWEN</h5>
+                    </div>
+                    <div id="wurtz" class="col-6 col-md-2 text-center cajahover">
+                        <img class="aguacate w-100" src="img/aguacate/wurtz.png" alt="">
+                        <h5 class="pt-4 t-aguacate">AGUACATE WURTZ</h5>
+                    </div>
+                    <div class="col-1 d-none d-md-flex"></div>
+                </div>
+            </div>
+        </div>
+        <div id="descubrir" class="container pt-5">
+            <div class="row">
+                <div class="col-4 d-none d-md-flex"></div>
+                <div class="col-md-4 pt-4 pt-md-0 col-12 d-flex justify-content-center">
+                    <div>
+                        <div class="p-3 shadow-lg" id="forma1" onmouseover="transformar1()"><img class="w-50" src="/img/marca.png" alt="Marca"></div>
+                        <h2 class="text-center fs-5 pt-4">MARCA</h2>
+                    </div>
+                </div>
+                <div class="col-4 d-none d-md-flex"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 pt-4 pt-md-0 col-12 d-flex justify-content-center">
+                    <div>
+                        <div class="p-3 shadow-lg" id="forma2" onmouseover="transformar2()"><img class="w-50" src="/img/quienes.png" alt="Quienes somos"></div>
+                        <h2 class="text-center fs-5 pt-4">¿QUIENES SOMOS?</h2>
+                    </div>
+                </div>
+                <div class="col-4 d-none d-md-flex"></div>
+                <div class="col-md-4 col-12 pt-4 pt-md-0 d-flex justify-content-center">
+                    <div>
+                        <div class="p-3 shadow-lg" id="forma3" onmouseover="transformar3()"><img class="w-50" src="/img/objetivo.png" alt="Objetivo"></div>
+                        <h2 class="text-center fs-5 pt-4">OBJETIVO</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+function checkAcceptCookies() {
+    if (localStorage.acceptCookies == 'true') {
+    } else {
+        $('#div-cookies').show();
+    }
+}
+function acceptCookies() {
+    localStorage.acceptCookies = 'true';
+    $('#div-cookies').hide();
+}
+$(document).ready(function() {
+    checkAcceptCookies();
+});
+
+
+
+</script>
+{% endblock %}

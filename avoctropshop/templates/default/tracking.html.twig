@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}- Seguimiento del Pedido{% endblock %}
+
+{% block main %}
+<main>
+        <div class="container">
+            <div class="row pt-3 border-bottom-verde">
+                <div class="col-8 text-verde">
+                    <h3 class="fw-bold">SEGUIMIENTO DEL PEDIDO Nº 31254</h3>
+                </div>
+                <div class="col-4 text-end text-verde">
+                    <h4 class="fw-bold">PEDIDO <span class="text-warning">ENVIADO</h3></span>
+                </div>
+            </div>
+            <div class="row pt-5 bg-white shadow-lg">
+                <div class="col-3 pb-3 border-bottom-verde">
+                    <h3 class="fw-bold fs-4 text-center text-verde">EN PREPARACION</h3>
+                </div>
+                <div class="col-3 border-bottom-verde">
+                    <h3 class="fw-bold fs-4 text-center text-verde">ENVIADO</h3>
+                </div>
+                <div class="col-3">
+                    <h3 class="fw-bold fs-4 text-center text-verde">EN REPARTO</h3>
+                </div>
+                <div class="col-3">
+                    <h3 class="fw-bold fs-4 text-center text-verde">ENTREGADO</h3>
+                </div>
+            </div>
+
+            <div class="shadow bg-white mt-3 p-3">
+                <div class="row pt-2 pb-5">
+                    <div class="col-12">
+                        <h3 class="fw-bold">Tu pedido se entregara el dia 12 de diciembre</h3>
+                    </div>
+                </div>
+                <div class="row pb-2">
+                    <div class="col-12">
+                        <h5 class="text-secondary">RESUMEN DEL PEDIDO :</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="table table-striped table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th>CANTIDAD</th>
+                                <th>NOMBRE PRODUCTO</th>
+                                <th>P.UNITARIO</th>
+                                <th>P.SUBTOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>x3</td>
+                                <td>AGUACATE HASS</td>
+                                <td>3,33€</td>
+                                <td>3,33€</td>
+                            </tr>
+                            <tr>
+                                <td>x3</td>
+                                <td>AGUACATE HASS</td>
+                                <td>3,33€</td>
+                                <td>3,33€</td>
+                            </tr>
+                            <tr>
+                                <td>x3</td>
+                                <td>AGUACATE HASS</td>
+                                <td>3,33€</td>
+                                <td>3,33€</td>
+                            </tr>
+                            <tr>
+                                <td>x3</td>
+                                <td>AGUACATE HASS</td>
+                                <td>3,33€</td>
+                                <td>3,33€</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <th>TOTAL :</th>
+                                <th>450€</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row pt-5 border-bottom-verde">
+                <div class="col-12 text-verde">
+                    <h3 class="fw-bold">No te vayas sin echarle un vistazo a estos productos</h3>
+                </div>
+            </div>
+            <div class="row pt-3 bg-white shadow-lg">
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <a class="text-decoration-none text-dark" href="producto">
+                        <div class="producto shadow">
+                            <img class="img-prod" src="/img/AVOCTROP (Logo) Verde.jpg" alt="">
+                            <h6 class="text-center pt-3">Aguacate 4kg</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a class="text-decoration-none text-dark" href="producto">
+                        <div class="producto shadow">
+                            <img class="img-prod" src="/img/AVOCTROP (Logo) Verde.jpg" alt="">
+                            <h6 class="text-center pt-3">Aguacate 4kg</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a class="text-decoration-none text-dark" href="producto">
+                        <div class="producto shadow">
+                            <img class="img-prod" src="/img/AVOCTROP (Logo) Verde.jpg" alt="">
+                            <h6 class="text-center pt-3">Aguacate 4kg</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a class="text-decoration-none text-dark" href="producto">
+                        <div class="producto shadow">
+                            <img class="img-prod" src="/img/AVOCTROP (Logo) Verde.jpg" alt="">
+                            <h6 class="text-center pt-3">Aguacate 4kg</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a class="text-decoration-none text-dark" href="producto">
+                        <div class="producto shadow">
+                            <img class="img-prod" src="/img/AVOCTROP (Logo) Verde.jpg" alt="">
+                            <h6 class="text-center pt-3">Aguacate 4kg</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
