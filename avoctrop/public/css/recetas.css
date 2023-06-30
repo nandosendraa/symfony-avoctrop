@@ -1,3 +1,8 @@
+@font-face{
+    font-family: "adlery";
+    src: url('../fonts/Adlery-Swash-trial.ttf');
+}
+
 .receta{
     border: 2px rgba(0, 0, 0, 0.119) solid;
     border-radius: 5px;
@@ -9,6 +14,11 @@
 
 .receta:hover{
     border: 3px #000000 solid;
+}
+
+.receta-titulo{
+    
+    font-family: "adlery";
 }
 
 .receta:hover h3{

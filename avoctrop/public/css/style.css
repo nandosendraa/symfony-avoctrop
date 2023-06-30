@@ -6,6 +6,10 @@ button{
     color: black;
 }
 
+.bg-gris-claro{
+    background-color: rgb(243, 242, 242);
+}
+
 .bottom{
     bottom: 2rem;
     left: 2rem;

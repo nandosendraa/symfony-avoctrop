@@ -1,0 +1,16 @@
+.scroll-container {
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    overflow-x: scroll;
+  }
+  
+  .scroll-list {
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .scroll-list li {
+    display: inline-block;
+    padding: 10px;
+  }
+  

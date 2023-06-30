@@ -1,7 +1,6 @@
 window.onload = ifload;
 var burgerOpen = false;
 var ventanaOpen = false;
-var i = 0;
 var aguacates = [
     hass = {
         titulo: 'AGUACATE HASS',
@@ -54,90 +53,6 @@ var aguacates = [
         img: 'wurtz.png'
     }
 ]
-var arrIzq = [
-    {
-        titulo: 'Legal',
-        img: 'imgLegal'
-    },
-    {
-        titulo: 'Noticias',
-        img: 'imgNoticias'
-    },
-    {
-        titulo: 'Aguacates',
-        img: 'imgAguacates'
-    },
-    {
-        titulo: 'Recetas',
-        img: 'imgRecetas'
-    },
-    {
-        titulo: 'Contacto',
-        img: 'imgContacto'
-    },
-    {
-        titulo: 'Galeria',
-        img: 'imgGaleria'
-    },
-];
-var arrCen = [
-    {
-        titulo: 'Noticias',
-        descripcion: 'DESCUBRE NUESTRAS NOVEDADES',
-        destino: 'noticias'
-    },
-    {
-        titulo: 'Aguacates',
-        descripcion: 'TENEMOS MUCHAS VARIEDADES DE AGUACATES',
-        destino: '#aguacates'
-    },
-    {
-        titulo: 'Recetas',
-        descripcion: 'PRUEBA A REPLICAR NUESTRAS DELICIOSAS RECETAS',
-        destino: 'recetas'
-    },
-    {
-        titulo: 'Contacto',
-        descripcion: '¿TIENES ALGUNA DUDA? CONTÁCTANOS',
-        destino: 'contacto'
-    },
-    {
-        titulo: 'Galeria',
-        descripcion: 'HÉCHALE UN VISTAZO A NUESTRA GALERIA DE IMAGENES',
-        destino: 'galeria'
-    },
-    {
-        titulo: 'Legal',
-        descripcion: 'CONSULTA LAS BASES LEGALES',
-        destino: 'legal'
-    }
-];
-var arrDer = [
-    {
-        titulo: 'Aguacates',
-        img: 'imgAguacates'
-    },
-    {
-        titulo: 'Recetas',
-        img: 'imgRecetas'
-    },
-    {
-        titulo: 'Contacto',
-        img: 'imgContacto'
-    },
-    {
-        titulo: 'Galeria',
-        img: 'imgGaleria'
-    },
-    {
-        titulo: 'Legal',
-        img: 'imgLegal'
-    },
-    {
-        titulo: 'Noticias',
-        img: 'imgNoticias'
-    }
-];
 
 function transformar1() {
     var forma = document.getElementById("forma1");
@@ -191,6 +106,7 @@ function load() {
     var forma3 = document.getElementById("forma3");
     forma3.addEventListener("mouseout", regresar3);
     forma3.addEventListener("mousehover", transformar3);
+    document.getElementById('desplegable').setAttribute('class','d-none')
     document.getElementById('hass').addEventListener('click', function () {display(hass)});
     document.getElementById('lhass').addEventListener('click', function () {display(lhass)});
     document.getElementById('carmen').addEventListener('click', function () {display(carmen)});
@@ -202,10 +118,6 @@ function load() {
     document.getElementById('gwen').addEventListener('click', function () {display(gwen)});
     document.getElementById('wurtz').addEventListener('click', function () {display(wurtz)});
     document.getElementById('cruz').addEventListener('click',dnone);
-    document.getElementById('iz').addEventListener('click', function () { izquierda(true)});
-    document.getElementById('de').addEventListener('click', function () { derecha(true)});
-    intervalo();
-    pintar();
 }
 
 function loadBurger(){
@@ -246,96 +158,4 @@ function dnone(){
     }
 }
 
-function pintar() {
-    let titI = document.getElementById('titI');
-    let imgI = document.getElementById('imgI');
-    let titC = document.getElementById('titC');
-    let descC = document.getElementById('descC');
-    let destC = document.getElementById('destC');
-    let titD = document.getElementById('titD');
-    let imgD = document.getElementById('imgD');
-
-    titI.innerHTML = '';
-    imgI.innerHTML = '';
-    titC.innerHTML = '';
-    descC.innerHTML = '';
-    titD.innerHTML = '';
-    imgD.innerHTML = '';
-
-    let tI = document.createTextNode(arrIzq[i].titulo);
-    titI.appendChild(tI);
-    imgI.setAttribute('src', arrIzq[i].img);
-    imgI.setAttribute('alt', arrIzq[i].img);
-
-    let tC = document.createTextNode(arrCen[i].titulo);
-    titC.appendChild(tC);
-    let dC = document.createTextNode(arrCen[i].descripcion);
-    descC.appendChild(dC);
-    destC.setAttribute('href', arrCen[i].destino);
-
-    let tD = document.createTextNode(arrDer[i].titulo);
-    titD.appendChild(tD);
-    imgD.setAttribute('src', arrDer[i].img);
-    imgD.setAttribute('alt', arrDer[i].img);
-    cambioChecked();
-}
-
-function cambioChecked(){
-    let b0 = document.getElementById('b0');
-    let b1 = document.getElementById('b1');
-    let b2 = document.getElementById('b2');
-    let b3 = document.getElementById('b3');
-    let b4 = document.getElementById('b4');
-    let b5 = document.getElementById('b5');
-
-    b0.removeAttribute('class');
-    b0.setAttribute('class','bi bi-circle');
-    b1.removeAttribute('class');
-    b1.setAttribute('class','bi bi-circle');
-    b2.removeAttribute('class');
-    b2.setAttribute('class','bi bi-circle');
-    b3.removeAttribute('class');
-    b3.setAttribute('class','bi bi-circle');
-    b4.removeAttribute('class');
-    b4.setAttribute('class','bi bi-circle');
-    b5.removeAttribute('class');
-    b5.setAttribute('class','bi bi-circle');
-    
-
-    let circulo = document.getElementById('b'+i);
-    circulo.removeAttribute('class');
-    circulo.setAttribute('class','bi bi-circle-fill');
-}
-
-function izquierda(a=false) {
-    if(a==true){
-        clearInterval(auto);
-        delay = setTimeout(intervalo, 4000);
-    }
-
-    if (i == 0)
-        i = 5;
-    else
-        i--;
-
-    pintar();
-}
-
-function derecha(a=false) {
-    if(a==true){
-        clearInterval(auto);
-        delay = setTimeout(intervalo, 5000);
-    }
-
-    if (i == 5)
-        i = 0;
-    else
-        i++;
-
-    pintar();
-}
-
-function intervalo(){
-    auto = setInterval(derecha, 2500);
-}
 

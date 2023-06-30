@@ -55,6 +55,7 @@ body{
 }
 
 #forma1.rectangulo {
+  text-align: center;
   width: 100%;
   height: 200px;
   border-radius: 0;
@@ -78,6 +79,7 @@ body{
 }
 
 #forma2.rectangulo {
+  text-align: center;
   width: 100%;
   height: 200px;
   border-radius: 0;
@@ -101,6 +103,7 @@ body{
 }
 
 #forma3.rectangulo {
+  text-align: center;
   width: 100%;
   height: 200px;
   border-radius: 0;
@@ -199,5 +202,6 @@ body{
   #c2{
     height: 12rem;
   }
+
 
   

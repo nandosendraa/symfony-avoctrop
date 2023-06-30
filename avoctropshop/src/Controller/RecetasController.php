@@ -47,11 +47,9 @@ class RecetasController extends AbstractController
     {
         $form = $this->createForm(RecetasType::class, $receta);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $receta->setImg('');
             $recetasRepository->save($receta, true);
-
             return $this->redirectToRoute('recetas', [], Response::HTTP_SEE_OTHER);
         }
 
