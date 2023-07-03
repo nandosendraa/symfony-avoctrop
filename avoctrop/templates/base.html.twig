@@ -30,11 +30,15 @@
         <div class="container-fluid">
             <div class="row bg-verde pt-2 pb-2 navbar navbar-expand">
                 <div class="col-2 col-md-2 ps-4 align-self-center">
-                    <a href="home"><img class="logo-nav" src="img/(Logo) Sin fondo.png" alt=""></a>
+                    <a href="{{ path('home') }}"><img class="logo-nav" src="img/(Logo) Sin fondo.png" alt=""></a>
                 </div>
                 <div class="col-1 align-self-center"></div>
                 <div class="col-6 align-self-center d-flex justify-content-center">
-                    <a href="home" class="text-decoration-none"><h2 class="fw-bold t m-0">AVOCTROP</h2></a>
+                        <a href="{{ path('home') }}" class="text-decoration-none">
+                            <span id="avoc">
+                                AVOCTROP
+                            </span>
+                        </a>
                 </div>
                 <div class="col-1 text-end align-self-center pe-0 d-none d-md-flex">
                     <div class="dropdown idioma">
@@ -49,19 +53,17 @@
                       </div>
                 </div>
                 <div class="col-2 align-self-center derecha ps-0 pe-4 d-none d-md-flex">
-                    <a class="btn btn-warning btn-font bg-amarillo border-amarillo" href="http://avoctropshop.local">PEDIDOS
-                        ONLINE</a>
+                    <a href="http://avoctropshop.local" class="button button--telesto p-2 text-center text-decoration-none rounded-1"><span><span>Pedidos Online</span></span></a>
                 </div>
                 <div class="col-3 d-flex d-md-none justify-content-end pe-3">
                     <i id="burger" class="bi bi-list fs-1"></i>
                 </div>
             </div>
-            <div id="desplegable" class="row bg-amarillo d-none d-md-flex">
-                <div class="col-12 d-flex flex-column flex-md-row text-center justify-content-between align-self-center p-3 pe-5 ps-5">
+            <div id="desplegable" class="row d-none d-md-flex">
+                <div class="col-12 d-flex flex-column flex-md-row text-center justify-content-between align-self-center p-3 pe-5 ps-5 cl-effect-20">
                     <div class="row d-md-none">
                         <div class="col-6 border-end border-dark">
-                            <a class="btn btn-warning btn-font bg-verde border-amarillo" href="http://avoctropshop.local">PEDIDOS
-                            ONLINE</a>
+                            <a href="http://avoctropshop.local" class="button button--telesto p-2 text-center text-decoration-none rounded-2"><span><span>Pedidos Online</span></span></a>
                         </div>
                         <div class="col-6 align-self-center">
                             <div class="dropdown idioma">
@@ -76,11 +78,11 @@
                       </div>
                         </div>
                     </div>
-                    <a class="text-decoration-none text-white efecto enlaces pt-3 pt-md-0" href="recetas">RECETAS</a>
-                    <a class="text-decoration-none text-white efecto enlaces pt-3 pt-md-0" href="noticias">NOTICIAS</a>
-                    <a class="text-decoration-none text-white efecto enlaces pt-3 pt-md-0" href="galeria">GALERIA</a>
-                    <a class="text-decoration-none text-white efecto enlaces pt-3 pt-md-0" href="contacto">CONTACTO</a>
-                    <a class="text-decoration-none text-white efecto enlaces pt-3 pt-md-0" href="legal">INFORMACIÓN LEGAL</a></div>
+                    <a class="text-decoration-none text-dark fw-bold pt-3 pt-md-0" href="{{ path('recetas') }}"><span class="span" data-hover="RECETAS">RECETAS</span></a>
+                    <a class="text-decoration-none text-dark fw-bold pt-3 pt-md-0" href="{{ path('noticias') }}"><span class="span" data-hover="NOTICIAS">NOTICIAS</span></a>
+                    <a class="text-decoration-none text-dark fw-bold pt-3 pt-md-0" href="{{ path('galeria') }}"><span class="span" data-hover="GALERIA">GALERIA</span></a>
+                    <a class="text-decoration-none text-dark fw-bold pt-3 pt-md-0" href="{{ path('contacto') }}"><span class="span" data-hover="CONTACTO">CONTACTO</span></a>
+                    <a class="text-decoration-none text-dark fw-bold pt-3 pt-md-0" href="{{ path('legal') }}"><span class="span" data-hover="INFORMACIÓN LEGAL">INFORMACIÓN LEGAL</span></a></div>
                 </div>
             </div>
         </div>
@@ -98,6 +100,15 @@
             <div class="row bg-amarillo pt-5 pb-4">
                 <div class="col-xl-4 col-md-6 col-12 align-self-center">
                     <img class="img-footer ps-3 mb-5 mb-md-0 w-100" src="img/Sin fondo (Pegatina rectangular).png" alt="">
+                    <a href="https://instagram.com/avoctrop" class="text-decoration-none">
+                        <i class="bi bi-instagram text-dark fs-1 ms-4 me-4"></i>
+                    </a>
+                    <a href="https://wa.me/34691125050?text=" class="text-decoration-none">
+                        <i class="bi bi-whatsapp text-dark fs-1 me-4"></i>
+                    </a>
+                    <a href="tel:+34 691 125 050" class="text-decoration-none">
+                        <i class="bi bi-telephone-fill text-dark fs-2 me-4"></i>
+                    </a>
                 </div>
                 <div class="col-xl-4 col-md-2 col-12"></div>
                 <div class="col-md-4 col-12">
@@ -114,23 +125,6 @@
             </div>
         </div>
     </footer>
-    <div class="position-fixed bottom">
-        <a href="https://instagram.com/avoctrop">
-            <div class="instagram p-1 ps-2 pe-2 rounded-5">
-                <i class="bi bi-instagram fs-1 text-white"></i>
-            </div>
-        </a>
-        <a href="https://wa.me/34691125050?text=">
-            <div class="whatsapp p-1 ps-2 pe-2 rounded-5">
-                <i class="bi bi-whatsapp fs-1 text-white"></i>
-            </div>
-        </a>
-        <a href="tel:+34 691 125 050">
-            <div class="whatsapp p-1 ps-2 pe-2 rounded-5 d-flex justify-content-center">
-                <i class="bi bi-telephone-fill fs-2 text-white"></i>
-            </div>
-        </a>
-    </div>
 </body>
 
 </html>
