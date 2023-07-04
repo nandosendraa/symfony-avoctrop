@@ -50,7 +50,7 @@
                                 <div class="col-md-7 col-12">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h3 class="pt-5 text-center fw-bold">{{receta.nombre}}</h3>
+                                            <h3 class="pt-5 text-center fw-bold receta-titulo">{{receta.nombre}}</h3>
                                         </div>
                                     </div>
                                     <div class="row pt-4 pe-3">
@@ -108,7 +108,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                       <div style="background-color: {{receta.color}};" class="modal-content">
                         <div class="modal-header border-0">
-                          <h1 class="modal-title" id="label{{loop.index}}">{{receta.nombre}}</h1>
+                          <h1 class="modal-title receta-titulo" id="label{{loop.index}}">{{receta.nombre}}</h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body border-0">

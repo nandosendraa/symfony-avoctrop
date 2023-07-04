@@ -1,5 +1,26 @@
 .caja{
-    border: 1px solid #DEE2E6;
-    border-radius: 0.6rem;
+    border: 1px solid #00000030;
     padding: 1.5rem;
+}
+
+input{
+    background-color: rgba(82, 82, 82, 0.487) !important;
+    border-radius: 0 !important;
+    border-bottom: 3px solid #AEEC63 !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+textarea{
+    background-color: rgba(82, 82, 82, 0.487) !important;
+    border-radius: 0 !important;
+    border-bottom: 3px solid #AEEC63 !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
 }

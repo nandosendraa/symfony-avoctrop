@@ -82,11 +82,13 @@ class DefaultController extends AbstractController
     #[Route('/contacto', name: 'contacto')]
     public function contacto(Request $request): Response
     {
+        $error = false;
         $contacto = new Contacto();
         $form = $this->createForm(ContactType::class, $contacto);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $error = true;
             setcookie('nombre',$contacto->getNombre());
             setcookie('email',$contacto->getEmail());
             setcookie('motivo',$contacto->getMotivo());
@@ -96,6 +98,7 @@ class DefaultController extends AbstractController
 
         return $this->render('default/contacto.html.twig', [
             'form' => $form->createView(),
+            'error' => $error
         ]);
     }
 

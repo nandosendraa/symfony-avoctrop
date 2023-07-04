@@ -40,11 +40,15 @@ button{
 
 .bg-verde{
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(173, 231, 103) 0%, rgb(175, 239, 97) 100%); 
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(173, 231, 103) 0%, rgb(175, 239, 97) 100%) !important; 
 }
 
 .img-footer{
     width: 30rem;
+}
+
+.color-verde{
+    color: #AFEE62;
 }
 
 .text-verde{
@@ -104,11 +108,6 @@ body{
     border-color: black;
 }
 
-.btn-font{
-    
-}
-
-
 #div-cookies {
     position: fixed;
     bottom: 0px;
@@ -119,6 +118,10 @@ body{
     padding: 7px;
     text-align: center;
     z-index: 99;
+}
+
+.bg-claro{
+   background-color: #F3F2F2;
 }
 
 .txtaguacate{
@@ -179,4 +182,34 @@ body{
 }
 .efecto:hover, .efecto:focus {
     background-size: 100% 2px;
+}
+
+.btn-form:active{
+    background-color: #ddeec9;
+    border: 2px solid #AFEE62;
+}
+
+.btn-form {
+    background-color: #AFEE62;
+    display: inline-block;
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-form::after {
+    position: inherit;
+    content: '';
+    display: block;
+    left: -0.5rem;
+    bottom: -0.5rem;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+}
+
+.btn-form:hover::after {
+    width: 116%;
+    transition: width .3s;
 }
