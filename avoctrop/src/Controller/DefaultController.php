@@ -115,8 +115,7 @@ class DefaultController extends AbstractController
 
         $body = $mensaje;
 
-        $mailer->setFrom('nandosendraa@gmail.com');
-        $mailer->addReplyTo('nandosendraa@gmail.com');
+        $mailer->setFrom('info@avoctrop.com');
         $mailer->addAddress('nandet2003@gmail.com');
         $mailer->msgHTML($body);
 
