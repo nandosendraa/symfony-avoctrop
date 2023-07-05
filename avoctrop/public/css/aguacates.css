@@ -1,0 +1,18 @@
+.imagen{
+    height: 20rem;
+}
+
+.deg-verde{
+    border-radius: 1rem;
+    padding: 2.5rem;
+    background:linear-gradient(30deg, #ADE966, #bcea84);
+}
+
+.bg-marron{
+    background-color: rgb(125, 72, 22);
+}
+
+.border-hoverable:hover{
+    border-color: black !important;
+    cursor:pointer;
+}

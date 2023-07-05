@@ -99,11 +99,6 @@ body{
     font-size: 1.1rem;
 }
 
-.cajahover:hover{
-    border: 2px solid rgba(208, 208, 208, 0.497);
-    border-radius: 2rem;
-}
-
 .btn-verde:hover{
     border-color: black;
 }

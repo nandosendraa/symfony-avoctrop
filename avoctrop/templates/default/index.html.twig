@@ -5,7 +5,7 @@
     
 {% endblock %}
 {% block main %}
-    <main>
+    <main class="bg-claro">
     <div id="div-cookies" style="display: none;">
         Necesitamos usar cookies para que funcione todo, si permanece aquí acepta su uso, más información en
         <a hreflang="es" href="legal">Aviso Legal</a>
@@ -86,79 +86,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 video text-center">
-                    <h1 class="pb-5 fs-2">¿QUIERES SABER MAS SOBRE NOSOTROS?</h1>
-                    <a class="button button--dione" href="#descubrir"><span>DESCÚBRENOS</span></a>
-                </div>
-            </div>
-            <div id="aguacates" class="row">
-                <div class="col-12 fondo">
-                    <h1 class="text-center text-white fw-bold pt-4 pb-3">TENEMOS AGUACATES PARA TODO EL AÑO</h1>
-                </div>
-            </div>
-            <div class="container-fluid position-relative">
-                <div id="ventana" class="position-absolute bg-verde rounded mb-5 txtaguacate d-none">
-                    <div class="row">
-                        <div class="col-10"><h5 id="titA" class="pt-4 text-center fs-2 t-aguacate">AGUACATE HASS</h5></div>
-                        <div id="cruz" class="pt-3 ps-4 col-2 cruz text-center"><i class="bi bi-x fs-1 pe-5"></i></div>
-                    </div>
-                    <div class="row p-3">
-                        <div class="col-md-5 col-12 align-self-center">
-                            <img id="imgA" class="w-100" src="img/aguacate/Hass.png" alt="">
-                        </div>
-                        <div class="col-md-7 col-12 align-self-center fs-4">
-                            <p id="txtA">Aqui ira un texto explicativo sobre este tipo de aguacate, generado con js para tener un contenido mas dinamico</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-5">
-                    <div class="col-1 d-none d-md-flex"></div>
-                    <div id="hass" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Hass.png" alt="">
-                        <h5 class="pt-4 t-aguacate text-center">AGUACATE HASS</h5>
-                    </div>
-                    <div id="lhass" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Lamb Hass.png" alt="">
-                        <h5 class="pt-4 t-aguacate text-center">AGUACATE LAMB HASS</h5>
-                    </div>
-                    <div id="carmen" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Carmen Hass.png" alt="">
-                        <h5 class="pt-4 t-aguacate text-center">AGUACATE CARMEN HASS</h5>
-                    </div>
-                    <div id="pinkerton" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Pinkerton.png" alt="">
-                        <h5 class="pt-4 t-aguacate">AGUACATE PINKERTON</h5>
-                    </div>
-                    <div id="boyce" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Jan Boyce.png" alt="">
-                        <h5 class="pt-4 t-aguacate">JAN BOYCE</h5>
-                    </div>
-                    <div class="col-1 d-none d-md-flex"></div>
-                    <div class="col-1 d-none d-md-flex"></div>
-                    <div id="carla" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Carla.png" alt="">
-                        <h5 class="pt-4 t-aguacate">AGUACATE CARLA</h5>
-                    </div>
-                    <div id="reed" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Reed.png" alt="">
-                        <h5 class="pt-4 t-aguacate">AGUACATE REED</h5>
-                    </div>
-                    <div id="pollock" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Pollock.png" alt="">
-                        <h5 class="pt-4 t-aguacate">AGUACATE POLLOCK</h5>
-                    </div>
-                    <div id="gwen" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/Gwen.png" alt="">
-                        <h5 class="pt-4 t-aguacate">AGUACATE GWEN</h5>
-                    </div>
-                    <div id="wurtz" class="col-6 col-md-2 text-center cajahover p-xxl-5">
-                        <img class="aguacate w-100" src="img/aguacate/wurtz.png" alt="">
-                        <h5 class="pt-4 t-aguacate">AGUACATE WURTZ</h5>
-                    </div>
-                    <div class="col-1 d-none d-md-flex"></div>
+                    <h1 class="pb-5 fs-2">NUESTROS AGUACATES SON LOS MEJORES</h1>
+                    <a class="button button--dione" href="{{path('aguacates')}}"><span>DESCÚBRELOS</span></a>
                 </div>
             </div>
         </div>
-        <div id="descubrir" class="container pt-5">
+        <div id="descubrir" class="container-fluid bg-claro pt-5 pb-5">
             <div class="row">
                 <div class="col-4 d-none d-md-flex"></div>
                 <div class="col-md-4 pt-4 pt-md-0 col-12 d-flex justify-content-center">

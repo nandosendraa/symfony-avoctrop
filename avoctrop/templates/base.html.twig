@@ -90,37 +90,44 @@
         {% block main %}{% endblock %}
     <footer>
         <div class="container-fluid">
-            <div class="row">
-                <svg class="g-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#edf7a0" fill-opacity="1"
-                        d="M0,224L60,197.3C120,171,240,117,360,133.3C480,149,600,235,720,266.7C840,299,960,277,1080,250.7C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-                    </path>
-                </svg>
-            </div>
-            <div class="row bg-amarillo pt-5 pb-4">
-                <div class="col-xl-4 col-md-6 col-12 align-self-center">
+            <div class="row pt-5">
+                <div class="col-4"></div>
+                <div class="col-4 text-center">
                     <img class="img-footer ps-3 mb-5 mb-md-0 w-100" src="img/Sin fondo (Pegatina rectangular).png" alt="">
+                </div>
+                <div class="col-4"></div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <p class="text-center">Otro texto de prueba porque no tengo ideas de textos pero asi puedo ver mas o menos como seria el resultado</p>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="row pt-5 pb-5">
+                <div class="col-4"></div>
+                <div class="col-4 d-flex justify-content-between">
                     <a href="https://instagram.com/avoctrop" class="text-decoration-none">
-                        <i class="bi bi-instagram text-dark fs-1 ms-4 me-4"></i>
+                        <i class="bi bi-instagram fs-3 p-2 rounded-5 text-dark bg-white border"></i>
                     </a>
                     <a href="https://wa.me/34691125050?text=" class="text-decoration-none">
-                        <i class="bi bi-whatsapp text-dark fs-1 me-4"></i>
+                        <i class="bi bi-whatsapp fs-3 p-2 rounded-5 text-dark bg-white border"></i>
                     </a>
-                    <a href="tel:+34 691 125 050" class="text-decoration-none">
-                        <i class="bi bi-telephone-fill text-dark fs-2 me-4"></i>
+                    <a href="https://facebook.com/avoctrop" class="text-decoration-none">
+                        <i class="bi bi-facebook fs-3 p-2 rounded-5 text-dark bg-white border"></i>
+                    </a>
+                    <a href="mailto:info@avoctrop.com" class="text-decoration-none">
+                        <i class="bi bi-envelope fs-3 p-2 rounded-5 text-dark bg-white border"></i>
+                    </a>
+                    <a href="{{ path('contacto') }}" class="text-decoration-none">
+                        <i class="bi bi-geo-alt-fill fs-3 p-2 rounded-5 text-dark bg-white border"></i>
                     </a>
                 </div>
-                <div class="col-xl-4 col-md-2 col-12"></div>
-                <div class="col-md-4 col-12">
-                    <h2 class="pb-4"><i class="bi bi-telephone-fill pe-4"></i>691 12 50 50</h2>
-                    <h2 class="pb-4"><i class="bi bi-geo-alt-fill pe-4"></i>Partida Mostalla, nº101 Pego (Alicante) 03780
-                    </h2>
-                    <h2 class=""><i class="bi bi-envelope-at-fill pe-4"></i>info@avoctrop.com</h2>
-                </div>
+                <div class="col-4"></div>
             </div>
-            <div class="row bg-verde">
+            <div class="row bg-verde opacity-75">
                 <div class="col-12">
-                    <h5 class="pt-2 pb-1 fw-bold text-white text-end pe-4">© Copyright 2023 Avoctrop</h5>
+                    <h5 class="pt-2 pb-1 fw-bold text-white text-center">© Copyright 2023 Avoctrop</h5>
                 </div>
             </div>
         </div>
@@ -128,4 +135,3 @@
 </body>
 
 </html>
-

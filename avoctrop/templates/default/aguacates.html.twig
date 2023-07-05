@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}- Aguacates{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/css/aguacates.css">
+{% endblock %}
+{% block main %}
+<main class="bg-claro">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 imagen bg-warning d-flex align-items-center justify-content-center">
+                <h1 class="fs-2 m-0 fw-bold text-center">TENEMOS AGUACATES PARA TODO EL AÑO</h1>
+            </div>
+        </div>
+    </div>
+    <div id="aguacates" class="row">
+            </div>
+            <div class="container-fluid position-relative bg-claro p-0">
+                <div id="ventana" class="position-absolute bg-verde rounded mb-5 txtaguacate d-none">
+                    <div class="row">
+                        <div class="col-10"><h5 id="titA" class="pt-4 text-center fs-2 fw-bold pb-3">AGUACATE HASS</h5></div>
+                        <div id="cruz" class="pt-3 ps-4 col-2 cruz text-center"><i class="bi bi-x fs-1 pe-5"></i></div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-md-5 col-12 align-self-center">
+                            <img id="imgA" class="w-100" src="img/aguacate/Hass.png" alt="">
+                        </div>
+                        <div class="col-md-7 col-12 align-self-center fs-4">
+                            <p id="txtA">Aqui ira un texto explicativo sobre este tipo de aguacate, generado con js para tener un contenido mas dinamico</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
+                    <div id="hass" class="col-6 col-md-2 pb-5 text-center ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="w-100" src="img/aguacate/Hass.png" alt="">
+                            <h5 class="pt-4 text-center fw-bold pb-3">AGUACATE HASS</h5>
+                        </div>
+                    </div>
+                    <div id="lhass" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/Lamb Hass.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3 text-center">AGUACATE LAMB HASS</h5>
+                        </div>
+                    </div>
+                    <div id="carmen" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/Carmen Hass.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3 text-center">AGUACATE CARMEN HASS</h5>
+                        </div>
+                    </div>
+                    <div id="pinkerton" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/Pinkerton.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3">AGUACATE PINKERTON</h5>
+                        </div>
+                    </div>
+                    <div id="boyce" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/Jan Boyce.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3">JAN BOYCE</h5>
+                        </div>
+                    </div>
+                    <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
+                    <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
+                    <div id="carla" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/Carla.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3">AGUACATE CARLA</h5>
+                        </div>
+                    </div>
+                    <div id="reed" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/Reed.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3">AGUACATE REED</h5>
+                        </div>
+                    </div>
+                    <div id="pollock" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/Pollock.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3">AGUACATE POLLOCK</h5>
+                        </div>
+                    </div>
+                    <div id="gwen" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/Gwen.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3">AGUACATE GWEN</h5>
+                        </div>
+                    </div>
+                    <div id="wurtz" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                            <img class="aguacate w-100" src="img/aguacate/wurtz.png" alt="">
+                            <h5 class="pt-4 fw-bold pb-3">AGUACATE WURTZ</h5>
+                        </div>
+                    </div>
+                    <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
+                </div>
+            </div>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 col-md-5 pb-5">
+                <div class="deg-verde">
+                    <h4 class="pb-2 fw-bold">NUTRIENTES</h4>
+                    <p class="pb-3">La pulpa de un aguacate contiene:</p>
+                    <div class="d-flex">
+                        <p class="pe-3">AGUA</p>
+                        <div class="progress w-100" role="progressbar" aria-label="Example with label" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped bg-marron" style="width: 73%"></div>
+                        </div>
+                        <p class="ps-3">73%</p>
+                    </div>
+                    <div class="d-flex">
+                        <p class="pe-3">GRASA</p>
+                        <div class="progress w-100" role="progressbar" aria-label="Example with label" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped bg-marron" style="width: 15%"></div>
+                        </div>
+                        <p class="ps-3">15%</p>
+                    </div>
+                    <div class="d-flex">
+                        <p class="pe-3">CARBOHIDRATOS</p>
+                        <div class="progress w-100" role="progressbar" aria-label="Example with label" aria-valuenow="9" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped bg-marron" style="width: 9%"></div>
+                        </div>
+                        <p class="ps-3">9%</p>
+                    </div>
+                    <div class="d-flex">
+                        <p class="pe-3">PROTEÍNA</p>
+                        <div class="progress w-100" role="progressbar" aria-label="Example with label" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped bg-marron" style="width: 2%"></div>
+                        </div>
+                        <p class="ps-3">2%</p>
+                    </div>
+                    <p class="pt-3">De cada 100 gramos, el aguacate proporciona 160 calorías y es una fuente rica de varias vitaminas B y vitamina K , con contenidos moderados de vitamina C, vitamina E y potasio. Los aguacates también contienen fitoesteroles y carotenoides, como la luteína y la zeaxantina.</p>
+                </div>
+            </div>
+            <div class="col-2 d-none d-md-flex"></div>
+            <div class="col-12 col-md-5 pb-5">
+                <div class="deg-verde h-100">
+                    <h4 class="pb-2 fw-bold">GRASA</h4>
+                    <p>Alrededor del 75 % de la energía de un aguacate proviene de la grasa, la mayor parte de la cual (67 % de la grasa total) es grasa monoinsaturada como ácido oleico (tabla)
+                    Otras grasas predominantes incluyen ácido palmítico y ácido linoleico
+                    </p>
+                    <p>El contenido de grasas saturadas asciende al 14% de la grasa total
+                    La composición típica de grasa total es aproximadamente: 1% ω-3, 14% ω-6, 71% ω-9 (65% oleico y 6% palmitoleico) y 14% de grasa saturada (ácido palmítico).
+                    Aunque es costoso de producir, el aceite de aguacate rico en nutrientes tiene una multitud de usos para ensaladas o para cocinar y en cosméticos y jabones.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>    
+{% endblock %}

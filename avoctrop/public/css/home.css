@@ -35,9 +35,7 @@ body{
     padding-top: 4rem;
 }
 
-.aguacate{
-    width: 8rem;
-}
+
 
 #forma1 {
   width: 200px;
@@ -109,11 +107,6 @@ body{
   border-radius: 4px;
   transition-property: width, height, border-radius;
   transition-duration: 0.5s;
-}
-
-
-.t-aguacate{
-  font-family: 'Lobster', cursive;
 }
 
 .radius-right{

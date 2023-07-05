@@ -138,4 +138,11 @@ class DefaultController extends AbstractController
         return $this->render('default/legal.html.twig', [
         ]);
     }
+
+    #[Route('/aguacates', name: 'aguacates')]
+    public function aguacates(): Response
+    {
+        return $this->render('default/aguacates.html.twig', [
+        ]);
+    }
 }
