@@ -52,10 +52,14 @@
                         {% for noticia in noticias %}
                             <div class="col-12 col-md-4 pt-4">  
                                 <button type="button" class="bg-white border-0 w-100" data-bs-toggle="modal" data-bs-target="#not{{loop.index}}">
-                                    <div class="noticia position-relative">
-                                        <img class="w-100" src="uploads/imgNoticias/{{noticia.img}}" alt="imagenNoticia">
-                                        <h3 class="titulo top-negative position-absolute w-100">{{noticia.titulo}}</h3>
-                                   </div>
+                                    <div class="h-100 position-relative bg-white shadow-lg border-bottom border-4 border-verde">
+                                        <img class="w-100" src="../uploads/imgNoticias/{{noticia.img}}" alt="">
+                                        <h4 class="pt-2 pb-2 text-center bg-verde-50 m-0">{{noticia.titulo}}</h4>
+                                        <span class="position-absolute z-2 top-0 start-80 translate-middle badge bg-marron">
+                            10/07/2023
+                            <span class="visually-hidden">fecha subida</span>
+                        </span>
+                                    </div>
                                 </button>
                             </div>
                        {% endfor %}
