@@ -91,30 +91,119 @@
                 </div>
             </div>
         </div>
-        <div id="descubrir" class="container-fluid bg-claro pt-5 pb-5">
+        <div id="descubrir" class="container pb-5">
             <div class="row">
-                <div class="col-4 d-none d-md-flex"></div>
-                <div class="col-md-4 pt-4 pt-md-0 col-12 d-flex justify-content-center">
-                    <div>
-                        <div class="p-3 shadow-lg" id="forma1" onmouseover="transformar1()"><img class="w-50" src="/img/marca.png" alt="Marca"></div>
-                        <h2 class="text-center fs-5 pt-4">MARCA</h2>
+                <div class="col-12 pt-5 col-md-6">
+                    <div class="shadow-lg p-4 border-bottom border-4 border-verde bg-white">
+                        <h3 class="text-center pt-3 fw-bold">¿QUIERES SOMOS?</h3>
+                        <p class="pt-2">Texto largo explicativo de quienes somos fklf fjsfaskjff sfjasfkjf sjf fsjfs fsjfjsjsjsjs sjsjs jsjsjs sjsjsj sjsjsjs sjsjsjs</p>
+                        <p class="pb-4">Gjlddfkl fd skldj sdlksdklskd skdsd skdskdksskskks skdajkofij fsalkdfsjlds</p>
                     </div>
                 </div>
-                <div class="col-4 d-none d-md-flex"></div>
+                <div class="col-12 pt-5 col-md-6">
+                    <div class="shadow-lg p-4 border-bottom border-4 border-verde bg-white">
+                        <h3 class="text-center pt-3 fw-bold">NUESTRO OBJETIVO</h3>
+                        <p class="pt-2">Texto largo explicativo de nuestro objetivo fjsfaskjff sfjasfkjf sjf fsjfs fsjfjsjsjsjs sjsjs jsjsjs sjsjsj sjsjsjs sjsjsjs</p>
+                        <p class="pb-4">Gjlddfkl fd skldj sdlksdklskd skdsd skdskdksskskks skdajkofij fsalkdfsjlds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row bg-gris-deg">
+                <div class="col-5 col-md-6 col-xl-8 subscribirse"></div>
+                <div class="col-7 col-md-6 col-xl-4">
+                    <h2 class="fw-bold text-center pt-3 text-white">¿QUIERES RECIBIR INFORMACION?</h2>
+                    <form class="text-center pe-2 ps-2 pe-md-4 ps-md-4" action="">
+                        <input class="form-control mb-2 mb-xl-4" type="text" placeholder="Nombre">
+                        <input class="form-control mb-2 mb-xl-4" type="text" placeholder="Apellidos">
+                        <input class="form-control mb-2 mb-xl-4" type="mail" placeholder="Correo Electronico">
+                        <button class="mb-2 mb-xl-4" type="submit">SUBSCRIBIRSE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row pt-3 pb-3">
+                <div class="col-12">
+                    <h1 class="text-center pt-3 pb-3 fw-bold color-verde">RECETAS</h1>
+                </div>
+                <div class="col-12 col-md-4 pt-3 pb-3">
+                    {% set receta = recetas[0] %}
+                    <div class="h-100 p-4 bg-white shadow-lg border-bottom border-4 border-verde">
+                        <h4>{{receta.nombre}}</h4>
+                        <img class="w-100" src="../uploads/imgRecetas/{{receta.img}}" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    {% for receta in recetas %}
+                    {% if (receta.top == true) %}
+                    <div class="h-100 position-relative p-4 bg-white shadow-lg border-bottom border-4 border-verde">
+                        <h4>{{receta.nombre}}</h4>
+                        <img class="w-100 mt-3" src="../uploads/imgRecetas/{{receta.img}}" alt="">
+                        {% endif %}
+                        {% endfor %}
+                        <span class="position-absolute top-0 p-2 start-50 translate-middle badge rounded-pill bg-success">
+                            TOP
+                            <span class="visually-hidden">receta top</span>
+                        </span>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3 pb-3">
+                    {% set receta = recetas[1] %}
+                    <div class="h-100 p-4 bg-white shadow-lg border-bottom border-4 border-verde">
+                        <h4>{{receta.nombre}}</h4>
+                        <img class="w-100" src="../uploads/imgRecetas/{{receta.img}}" alt="">
+                    </div>
+                </div>
             </div>
             <div class="row">
-                <div class="col-md-4 pt-4 pt-md-0 col-12 d-flex justify-content-center">
-                    <div>
-                        <div class="p-3 shadow-lg" id="forma2" onmouseover="transformar2()"><img class="w-50" src="/img/quienes.png" alt="Quienes somos"></div>
-                        <h2 class="text-center fs-5 pt-4">¿QUIENES SOMOS?</h2>
+                <div class="col-12 text-center">
+                    <a class="button button--dione p-3" href="{{path('recetas')}}"><span>VER MAS RECETAS</span></a>
+                </div>
+            </div>
+            <div class="row pt-3 pb-3">
+                <div class="col-12">
+                    <h1 class="text-center pt-3 pb-3 fw-bold color-verde">NOTICIAS</h1>
+                </div>
+                <div class="col-12 col-md-4">
+                    {% set noticia = noticias[0] %}
+                    <div class="h-100 position-relative bg-white shadow-lg border-bottom border-4 border-verde">
+                        <img class="w-100" src="../uploads/imgNoticias/{{noticia.img}}" alt="">
+                        <h4 class="pt-2 pb-2 text-center bg-verde-50 m-0">{{noticia.titulo}}</h4>
+                         <span class="position-absolute z-2 top-0 start-80 translate-middle badge bg-marron">
+                            10/07/2023
+                            <span class="visually-hidden">fecha subida</span>
+                        </span>
                     </div>
                 </div>
-                <div class="col-4 d-none d-md-flex"></div>
-                <div class="col-md-4 col-12 pt-4 pt-md-0 d-flex justify-content-center">
-                    <div>
-                        <div class="p-3 shadow-lg" id="forma3" onmouseover="transformar3()"><img class="w-50" src="/img/objetivo.png" alt="Objetivo"></div>
-                        <h2 class="text-center fs-5 pt-4">OBJETIVO</h2>
+                <div class="col-12 col-md-4">
+                    {% set noticia = noticias[1] %}
+                    <div class="h-100 position-relative bg-white shadow-lg border-bottom border-4 border-verde">
+                        <img class="w-100" src="../uploads/imgNoticias/{{noticia.img}}" alt="">
+                        <h4 class="pt-2 pb-2 text-center bg-verde-50 m-0">{{noticia.titulo}}</h4>
+                         <span class="position-absolute z-2 top-0 start-80 translate-middle badge bg-marron">
+                            10/07/2023
+                            <span class="visually-hidden">fecha subida</span>
+                        </span>
                     </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    {% set noticia = noticias[2] %}
+                    <div class="h-100 position-relative bg-white shadow-lg border-bottom border-4 border-verde">
+                        <img class="w-100" src="../uploads/imgNoticias/{{noticia.img}}" alt="">
+                        <h4 class="pt-2 pb-2 text-center bg-verde-50 m-0">{{noticia.titulo}}</h4>
+                         <span class="position-absolute z-2 top-0 start-80 translate-middle badge bg-marron">
+                            10/07/2023
+                            <span class="visually-hidden">fecha subida</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-12 text-center">
+                    <a class="button button--dione p-3" href="{{path('noticias')}}"><span>VER MAS NOTICIAS</span></a>
                 </div>
             </div>
         </div>

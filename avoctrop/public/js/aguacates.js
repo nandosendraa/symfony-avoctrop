@@ -1,5 +1,5 @@
 window.onload = main;
 
 function main(){
-    console.log('main');
+    console.log('ye');
 }

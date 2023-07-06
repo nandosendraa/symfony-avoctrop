@@ -16,3 +16,7 @@
     border-color: black !important;
     cursor:pointer;
 }
+
+.border-modal{
+    border-bottom: 0.3rem solid #ADE966 !important;
+}

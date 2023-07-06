@@ -3,6 +3,7 @@
 {% block title %}- Aguacates{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="/css/aguacates.css">
+    <script src="../js/aguacates.js"></script>
 {% endblock %}
 {% block main %}
 <main class="bg-claro">
@@ -13,88 +14,202 @@
             </div>
         </div>
     </div>
-    <div id="aguacates" class="row">
-            </div>
             <div class="container-fluid position-relative bg-claro p-0">
-                <div id="ventana" class="position-absolute bg-verde rounded mb-5 txtaguacate d-none">
-                    <div class="row">
-                        <div class="col-10"><h5 id="titA" class="pt-4 text-center fs-2 fw-bold pb-3">AGUACATE HASS</h5></div>
-                        <div id="cruz" class="pt-3 ps-4 col-2 cruz text-center"><i class="bi bi-x fs-1 pe-5"></i></div>
-                    </div>
-                    <div class="row p-3">
-                        <div class="col-md-5 col-12 align-self-center">
-                            <img id="imgA" class="w-100" src="img/aguacate/Hass.png" alt="">
-                        </div>
-                        <div class="col-md-7 col-12 align-self-center fs-4">
-                            <p id="txtA">Aqui ira un texto explicativo sobre este tipo de aguacate, generado con js para tener un contenido mas dinamico</p>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content rounded-0 border-modal">
+                            <div class="modal-header border-0">
+                                <h1 class="modal-title fs-5" id="m-tit"></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p id="m-txt"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row pt-5">
+                <div class="row pt-5 d-none d-md-flex">
                     <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
-                    <div id="hass" class="col-6 col-md-2 pb-5 text-center ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="w-100" src="img/aguacate/Hass.png" alt="">
-                            <h5 class="pt-4 text-center fw-bold pb-3">AGUACATE HASS</h5>
-                        </div>
+                    <div class="col-6 col-md-2 pb-5 text-center ps-xxl-4 pe-xxl-4">
+                        <button id="hass" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="w-100" src="img/aguacate/Hass.png" alt="">
+                                <h5 class="pt-4 text-center fw-bold pb-3">AGUACATE HASS</h5>
+                            </div>
+                        </button>
                     </div>
-                    <div id="lhass" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/Lamb Hass.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3 text-center">AGUACATE LAMB HASS</h5>
-                        </div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="lhass" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/Lamb Hass.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3 text-center">AGUACATE LAMB HASS</h5>
+                            </div>
+                        </button>
                     </div>
-                    <div id="carmen" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/Carmen Hass.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3 text-center">AGUACATE CARMEN HASS</h5>
-                        </div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="carmen" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/Carmen Hass.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3 text-center">AGUACATE CARMEN HASS</h5>
+                            </div>
+                        </button>
                     </div>
-                    <div id="pinkerton" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/Pinkerton.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3">AGUACATE PINKERTON</h5>
-                        </div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="pinkerton" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/Pinkerton.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3">AGUACATE PINKERTON</h5>
+                            </div>
+                        </button>
                     </div>
-                    <div id="boyce" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/Jan Boyce.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3">JAN BOYCE</h5>
-                        </div>
-                    </div>
-                    <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
-                    <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
-                    <div id="carla" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/Carla.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3">AGUACATE CARLA</h5>
-                        </div>
-                    </div>
-                    <div id="reed" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/Reed.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3">AGUACATE REED</h5>
-                        </div>
-                    </div>
-                    <div id="pollock" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/Pollock.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3">AGUACATE POLLOCK</h5>
-                        </div>
-                    </div>
-                    <div id="gwen" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/Gwen.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3">AGUACATE GWEN</h5>
-                        </div>
-                    </div>
-                    <div id="wurtz" class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
-                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
-                            <img class="aguacate w-100" src="img/aguacate/wurtz.png" alt="">
-                            <h5 class="pt-4 fw-bold pb-3">AGUACATE WURTZ</h5>
-                        </div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="boyce" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/Jan Boyce.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3">JAN BOYCE</h5>
+                            </div>
+                        </button>
                     </div>
                     <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
+                    <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="carla" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/Carla.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3">AGUACATE CARLA</h5>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="reed" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/Reed.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3">AGUACATE REED</h5>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="pollock" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/Pollock.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3">AGUACATE POLLOCK</h5>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="gwen" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/Gwen.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3">AGUACATE GWEN</h5>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-2 pb-5 text-center cajahover ps-xxl-4 pe-xxl-4">
+                        <button id="wurtz" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                <img class="aguacate w-100" src="img/aguacate/wurtz.png" alt="">
+                                <h5 class="pt-4 fw-bold pb-3">AGUACATE WURTZ</h5>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-1 d-none d-md-flex bg-claro p-0"></div>
+                </div>
+                <div class="row pt-5 d-md-none">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <div id="carouselExampleRide" class="carousel carousel-dark slide" data-bs-ride="true">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <button id="hass2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                            <img class="w-100" src="img/aguacate/Hass.png" alt="">
+                                            <h5 class="pt-4 text-center fw-bold pb-3">AGUACATE HASS</h5>
+                                        </div>
+                                    </button>
+                                </div>
+                            <div class="carousel-item">
+                                <button id="lhass2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/Lamb Hass.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3 text-center">AGUACATE LAMB HASS</h5>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="carousel-item">
+                                <button id="carmen2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/Carmen Hass.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3 text-center">AGUACATE CARMEN HASS</h5>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="carousel-item">
+                                <button id="pinkerton2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/Pinkerton.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3">AGUACATE PINKERTON</h5>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="carousel-item">
+                                <button id="boyce2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/Jan Boyce.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3">JAN BOYCE</h5>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="carousel-item">
+                                <button id="carla2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/Carla.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3">AGUACATE CARLA</h5>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="carousel-item">
+                                <button id="reed2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/Reed.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3">AGUACATE REED</h5>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="carousel-item">
+                                <button id="pollock2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/Pollock.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3">AGUACATE POLLOCK</h5>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="carousel-item">
+                                <button id="gwen2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/Gwen.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3">AGUACATE GWEN</h5>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="carousel-item">
+                                <button id="wurtz2" type="button" class="h-100 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="bg-white shadow h-100 border-hoverable border-bottom border-4 border-verde">
+                                        <img class="aguacate w-100" src="img/aguacate/wurtz.png" alt="">
+                                        <h5 class="pt-4 fw-bold pb-3">AGUACATE WURTZ</h5>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div class="col-1"></div>
                 </div>
             </div>
     <div class="container pt-5">

@@ -18,9 +18,13 @@ use Dompdf\Dompdf as DompdfDompdf;
 class DefaultController extends AbstractController
 {
     #[Route('/home', name: 'home')]
-    public function home(): Response
+    public function home(RecetasRepository $recetasRepository, NoticiasRepository $noticiasRepository): Response
     {
+        $recetas = $recetasRepository->findAll();
+        $noticias = $noticiasRepository->findAll();
         return $this->render('default/index.html.twig', [
+            'recetas' => $recetas,
+            'noticias' => $noticias
         ]);
     }
 
