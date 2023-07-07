@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contacto;
+use App\Entity\Recetas;
 use App\Form\ContactType;
 use App\Repository\NoticiasRepository;
 use App\Repository\RecetasRepository;
@@ -11,9 +12,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
+use Knp\Snappy\Pdf;
 use Symfony\Component\Mailer\Mailer;
 use Dompdf;
 use Dompdf\Dompdf as DompdfDompdf;
+use phpDocumentor\Reflection\Types\Integer;
 
 class DefaultController extends AbstractController
 {
@@ -21,7 +25,7 @@ class DefaultController extends AbstractController
     public function home(RecetasRepository $recetasRepository, NoticiasRepository $noticiasRepository): Response
     {
         $recetas = $recetasRepository->findAll();
-        $noticias = $noticiasRepository->findAll();
+        $noticias = $noticiasRepository->searchByDate();
         return $this->render('default/index.html.twig', [
             'recetas' => $recetas,
             'noticias' => $noticias
@@ -51,16 +55,32 @@ class DefaultController extends AbstractController
         ]);
     }
 
+    #[Route('/pdf/{id}', name: 'pdf')]
+    public function pdf(Pdf $pdf, RecetasRepository $recetasRepository,int $id): Response
+    {
+        $receta = $recetasRepository->searchById($id);
+        $html = $this->renderView('default/pdf.html.twig', [
+            'receta'=> $receta,
+        ]);
+        $nombreArchivo = 'receta.pdf';
+        return new PdfResponse(
+            $pdf->getOutputFromHtml($html),
+            $nombreArchivo
+        );
+        /*return $this->render('default/pdf.html.twig', [
+            'receta'=> $receta,
+        ]);*/
+    }
+
     #[Route('/noticias', name: 'noticias')]
     public function noticias(Request $request, NoticiasRepository $noticiasRepository): Response
     {
         $buscar = "%".$request->query->get('buscar')."%";
         $txt = $request->query->get('buscar');
-
         if ($buscar != null)
-            $noticias = $noticiasRepository->search($buscar);
+            $noticias = $noticiasRepository->searchByDate($buscar);
         else
-            $noticias = $noticiasRepository->findAll();
+            $noticias = $noticiasRepository->findAll();     
         return $this->render('default/noticias.html.twig', [
             'noticias'=>$noticias,
             'txt' => $txt

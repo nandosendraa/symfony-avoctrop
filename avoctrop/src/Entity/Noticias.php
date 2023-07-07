@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\NoticiasRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: NoticiasRepository::class)]
@@ -24,6 +25,9 @@ class Noticias
 
     #[ORM\Column]
     private ?bool $relevante = null;
+
+    #[ORM\Column]
+    private ?String $updated_at = null;
 
     public function getId(): ?int
     {
@@ -62,6 +66,18 @@ class Noticias
     public function setImg(string $img): static
     {
         $this->img = $img;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?string
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(string $updated_at): static
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

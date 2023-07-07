@@ -4,7 +4,7 @@
 }
 
 input{
-    background-color: rgba(82, 82, 82, 0.487) !important;
+    background-color: rgba(233, 233, 233, 0.561) !important;
     border-radius: 0 !important;
     border-bottom: 3px solid #AEEC63 !important;
     outline:none !important;
@@ -15,7 +15,7 @@ input{
 }
 
 textarea{
-    background-color: rgba(82, 82, 82, 0.487) !important;
+    background-color: rgba(233, 233, 233, 0.561) !important;
     border-radius: 0 !important;
     border-bottom: 3px solid #AEEC63 !important;
     outline:none !important;

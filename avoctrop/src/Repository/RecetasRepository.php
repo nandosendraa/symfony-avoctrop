@@ -49,6 +49,16 @@ class RecetasRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function searchById($value): array
+    {
+        $query = $this->createQueryBuilder('receta')
+            ->andwhere('receta.id LIKE :value')
+            ->setParameter('value', $value)
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
 
 
 //    /**

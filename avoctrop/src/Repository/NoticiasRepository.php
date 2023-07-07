@@ -49,6 +49,15 @@ class NoticiasRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function searchByDate(): array
+    {
+            $query = $this->createQueryBuilder('noticias')
+            ->orderBy('noticias.updated_at', 'DESC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
 //    /**
 //     * @return Noticias[] Returns an array of Noticias objects
 //     */

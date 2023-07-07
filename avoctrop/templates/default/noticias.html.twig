@@ -8,12 +8,12 @@
         {% for noticia in noticias %}
             <div class="modal fade" id="not{{loop.index}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">{{noticia.titulo}}</h1>
+                  <div class="modal-content rounded-0">
+                    <div class="modal-header rounded-0 text-center bg-verde-50 m-0 border-bottom border-4 border-verde">
+                      <h1 class="modal-title fw-bold w-100 fs-5" id="exampleModalLabel">{{noticia.titulo}}</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body p-0">
                       <img class="w-100" src="uploads/imgNoticias/{{noticia.img}}" alt="imagenNoticia">
                     </div>
                     <div class="modal-footer">
@@ -35,12 +35,12 @@
                 <div class="col-12">
                     <form method="get" action="noticias">
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-11 p-0">
                                 <input type="text" name="buscar" class="buscador" id="buscador" {% if txt %} value="{{txt}}"{% endif %} placeholder="Buscar por nombre de la noticia">  
                             </div>
-                            <div class="col-2 text-center d-flex justify-content-around">
-                                <button class="btn btn-verde p-2" type="submit"><i class="bi bi-search"></i></button>
-                                <a class="btn btn-danger p-2" href="noticias"><i class="bi bi-trash"></i></a>
+                            <div class="col-1 p-0 text-center d-flex justify-content-around">
+                                <button class="w-100 bg-verde b-search p-2 border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
+                                <a class="btn btn-danger w-100 p-2 rounded-0" href="noticias"><i class="bi bi-trash"></i></a>
                             </div>
                         </div>
                     </form>
@@ -50,13 +50,13 @@
                 <div class="col-12">
                     <div class="row pb-5">
                         {% for noticia in noticias %}
-                            <div class="col-12 col-md-4 pt-4">  
+                            <div class="col-12 col-md-4 pt-4 d-flex align-items-center">  
                                 <button type="button" class="bg-white border-0 w-100" data-bs-toggle="modal" data-bs-target="#not{{loop.index}}">
-                                    <div class="h-100 position-relative bg-white shadow-lg border-bottom border-4 border-verde">
+                                    <div class="h-100 position-relative noticia bg-white shadow-lg border-bottom border-4 border-verde">
                                         <img class="w-100" src="../uploads/imgNoticias/{{noticia.img}}" alt="">
                                         <h4 class="pt-2 pb-2 text-center bg-verde-50 m-0">{{noticia.titulo}}</h4>
                                         <span class="position-absolute z-2 top-0 start-80 translate-middle badge bg-marron">
-                            10/07/2023
+                            {{noticia.updatedAt|date("m/d/Y")}}
                             <span class="visually-hidden">fecha subida</span>
                         </span>
                                     </div>
